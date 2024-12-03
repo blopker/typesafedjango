@@ -5,7 +5,7 @@ run:
 
 watch:
 	cd frontend && \
-	bun run watch
+	bun run dev
 
 build:
 	cd frontend && \

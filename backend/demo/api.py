@@ -3,10 +3,10 @@ from ninja import NinjaAPI, Schema
 api = NinjaAPI()
 
 _food = {
-    "apple": 1,
+    "apple": 7,
     "banana": 2,
     "orange": 3,
-    "pear": 4,
+    "pear": 1,
     "strawberry": 5,
 }
 
