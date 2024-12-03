@@ -4,32 +4,30 @@ import styles from "./Food.module.css";
 
 function Food() {
   const [currentFood, setCurrentFood] = createSignal("apple");
-  const [food] = createResource(() => demoApiFood());
-  const [foodLeft] = createResource(currentFood, (food) =>
+  const [foodResource] = createResource(() => demoApiFood());
+  const [foodLeftResource] = createResource(currentFood, (food) =>
     demoApiFoodleft({ query: { food } }),
   );
+  const food = () => foodResource()?.data?.food ?? [];
+  const foodLeft = () => foodLeftResource()?.data?.foodleft ?? 0;
   return (
     <div class={styles.Food}>
-      <Show when={food()?.data}>
-        <div>
-          <For each={food()?.data?.food}>
-            {(food) => (
-              <div
-                class={styles.FoodItem}
-                classList={{
-                  [styles.FoodItemActive]: food === currentFood(),
-                }}
-                onClick={() => setCurrentFood(food)}
-              >
-                {food}
-              </div>
-            )}
-          </For>
-        </div>
-      </Show>
-      <Show when={foodLeft.latest}>
-        <div class={styles.FoodCount}>{foodLeft.latest?.data?.foodleft}</div>
-      </Show>
+      <div>
+        <For each={food()}>
+          {(food) => (
+            <div
+              class={styles.FoodItem}
+              classList={{
+                [styles.FoodItemActive]: food === currentFood(),
+              }}
+              onClick={() => setCurrentFood(food)}
+            >
+              {food}
+            </div>
+          )}
+        </For>
+      </div>
+      <div class={styles.FoodCount}>{foodLeft()}</div>
     </div>
   );
 }

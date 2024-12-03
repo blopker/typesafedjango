@@ -17,11 +17,11 @@ class FoodLeftSchema(Schema):
 
 
 @api.get("/foodleft", response=FoodLeftSchema)
-def foodleft(request, food: str):
-    return {
-        "foodleft": _food.get(food, 0),
-        "food": food,
-    }
+def foodleft(request, food: str) -> FoodLeftSchema:
+    return FoodLeftSchema(
+        food=food,
+        foodleft=_food.get(food, 0),
+    )
 
 
 class FoodSchema(Schema):
@@ -29,5 +29,5 @@ class FoodSchema(Schema):
 
 
 @api.get("/food", response=FoodSchema)
-def food(request):
-    return {"food": list(_food.keys())}
+def food(request) -> FoodSchema:
+    return FoodSchema(food=list(_food.keys()))
