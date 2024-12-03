@@ -1,6 +1,0 @@
-Error downloading http://localhost:8000/api/openapi.json 
-fetch failed
-ResolverError: Error downloading http://localhost:8000/api/openapi.json 
-fetch failed
-    at download (/Users/blopker/code/typesafemoodeng/frontend/node_modules/@apidevtools/json-schema-ref-parser/dist/lib/resolvers/http.js:113:15)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

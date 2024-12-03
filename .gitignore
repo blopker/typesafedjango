@@ -6,3 +6,4 @@ backend/static/bundles/*
 # Javascript
 node_modules
 dist
+*.log

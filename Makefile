@@ -3,11 +3,11 @@ run:
 	python manage.py migrate && \
 	python manage.py runserver
 
-buildjs:
+watch:
 	cd frontend && \
-	bun run build
+	bun run watch
 
-# run dev server first
-generate_openapi:
+build:
 	cd frontend && \
-	bun run openapi-ts
+	bun run openapi-ts && \
+	bun run build

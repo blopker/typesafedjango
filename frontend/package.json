@@ -4,11 +4,9 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "bun run build.mjs",
-    "openapi-ts": "openapi-ts",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "dev": "bun run build.mjs watch",
+    "build": "bun run build.mjs",
+    "openapi-ts": "openapi-ts"
   },
   "license": "MIT",
   "devDependencies": {
