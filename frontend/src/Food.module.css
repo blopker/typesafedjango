@@ -1,0 +1,19 @@
+.Food {
+    display: flex;
+    align-items: center;
+}
+
+.FoodItem {
+    color: green;
+    cursor: pointer;
+}
+
+.FoodItemActive {
+    color: red;
+}
+
+.FoodCount {
+    color: red;
+    font-size: 5rem;
+    padding-left: 20px;
+}

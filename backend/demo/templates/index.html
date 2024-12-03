@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% load static %} {% block content %}
+<h1>Moo Deng's Personal Site</h1>
+<img width="200" src="{% static 'moodeng.min.webp' %}" alt="" />
+<h2>Feeding Time</h2>
+<my-time time="{% now 'c' %}">
+    <time datetime="{% now 'c' %}">{% now 'U' %}</time>
+</my-time>
+
+<h2>Food Left</h2>
+<my-food />
+{% endblock content %}

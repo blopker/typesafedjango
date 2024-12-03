@@ -1,0 +1,8 @@
+# Python
+.venv
+*.sqlite3
+backend/static/bundles/*
+
+# Javascript
+node_modules
+dist
