@@ -7,3 +7,4 @@ backend/static/bundles/*
 node_modules
 dist
 *.log
+meta.json

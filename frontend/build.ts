@@ -1,15 +1,14 @@
 #!/usr/bin/env bun
 import * as esbuild from "esbuild";
 import { solidPlugin } from "esbuild-plugin-solid";
-import fs from "bun:fs";
-import process from "bun:process";
 
-const arg = process.argv[2];
+const arg = Bun.argv[2];
 
-const options = {
+const options: esbuild.BuildOptions = {
   entryPoints: ["src/index.tsx"],
   bundle: true,
   minify: true,
+  metafile: true,
   loader: {
     ".svg": "dataurl",
   },
@@ -29,4 +28,5 @@ if (arg === "watch") {
   await ctx.watch();
 } else {
   const result = await esbuild.build(options);
+  Bun.write("meta.json", JSON.stringify(result.metafile));
 }
