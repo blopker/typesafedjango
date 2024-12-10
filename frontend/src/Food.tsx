@@ -1,6 +1,6 @@
-import { createResource, createSignal, For, Show } from "solid-js";
-import { demoApiFood, demoApiFoodleft } from "./client";
+import { For, Show, createResource, createSignal } from "solid-js";
 import styles from "./Food.module.css";
+import { demoApiFood, demoApiFoodleft } from "./client";
 
 function Food() {
   const [currentFood, setCurrentFood] = createSignal("apple");
@@ -21,6 +21,7 @@ function Food() {
                 [styles.FoodItemActive]: food === currentFood(),
               }}
               onClick={() => setCurrentFood(food)}
+              onKeyDown={() => setCurrentFood(food)}
             >
               {food}
             </div>

@@ -1,15 +1,15 @@
 import { customElement, noShadowDOM } from "solid-element";
 import "./index.css";
-import Time from "./Time";
 import Food from "./Food";
+import Time from "./Time";
 
-customElement("my-time", { time: "" }, (props, { element }) => {
+customElement("w-food-time", { time: "" }, (props, { element }) => {
   noShadowDOM();
   element.innerHTML = "";
   return <Time time={props.time} />;
 });
 
-customElement("my-food", (props, { element }) => {
+customElement("w-my-food", (props, { element }) => {
   noShadowDOM();
   element.innerHTML = "";
   return <Food />;

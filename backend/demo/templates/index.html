@@ -6,10 +6,10 @@
     </div>
 </div>
 <h2>Feeding Time</h2>
-<my-time time="{% now 'c' %}">
-    <time datetime="{% now 'c' %}">{% now 'U' %}</time>
-</my-time>
+<w-food-time time="{{ feed_time|date:'c' }}">
+    <time datetime="{{ feed_time|date:'c' }}}">{{ feed_time|date:'U' }}</time>
+</w-food-time>
 
 <h2>Food Left</h2>
-<my-food />
+<w-my-food />
 {% endblock content %}

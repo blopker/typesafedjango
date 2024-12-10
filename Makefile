@@ -1,4 +1,7 @@
-run:
+MAKEFLAGS += -j4
+run: serve watch
+
+serve:
 	cd backend && \
 	python manage.py migrate && \
 	python manage.py runserver
