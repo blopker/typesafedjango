@@ -18,7 +18,8 @@ function Time(props: { time: string }) {
     Math.floor((new Date(props.time).getTime() - now()) / 1000);
   return (
     <time datetime={props.time} class={styles.Time}>
-      {hippoTime()}, {secondsToTime()} seconds from now!
+      {hippoTime()}
+      <div>{secondsToTime()} seconds from now!</div>
     </time>
   );
 }
